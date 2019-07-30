@@ -1,0 +1,39 @@
+//
+//  WeatherDetailTitleView.swift
+//  WeatherSwiftUI
+//
+//  Created by Nicolas Mulet on 27/07/2019.
+//  Copyright © 2019 Nicolas Mulet. All rights reserved.
+//
+
+import SwiftUI
+
+struct WeatherDetailTitleView: View {
+    var weatherDetail: WeatherDetail
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 32.0) {
+            VStack {
+                Text(weatherDetail.name).font(.title)
+                Text(weatherDetail.weather[0].main).font(.caption)
+                Text("\(weatherDetail.main.temperature.toCelsius())°").font(.largeTitle)
+            }
+            
+            HStack(alignment: .bottom, spacing: 12.0) {
+                Text(weatherDetail.date.dayOfTheWeek)
+                Text("TODAY").font(.headline)
+                Spacer()
+                
+                TemperatureView(tempMin: weatherDetail.main.tempMin.toCelsius(), tempMax: weatherDetail.main.tempMax.toCelsius())
+            }
+        }
+    }
+}
+
+#if DEBUG
+struct WeatherDetailTitleView_Previews: PreviewProvider {
+    static var previews: some View {
+        WeatherDetailTitleView(weatherDetail: sampleWeatherDetail)
+    }
+}
+#endif
