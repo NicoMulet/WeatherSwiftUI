@@ -9,7 +9,7 @@ It currently runs on iOS but the goal is to run on macOS and iPadOS too.
 
 ## API
 
-WeatherSwiftUI uses the [OpenWeather API](https://openweathermap.org) to fetch weather datas. It uses a free API key. So it only has a 3 hours and 5 days forecast.
+WeatherSwiftUI uses the [OpenWeather API](https://openweathermap.org) to fetch weather datas. It uses a free API key thereby it only has a 3 hours and 5 days forecast.
 
 ## SwiftUI
 
