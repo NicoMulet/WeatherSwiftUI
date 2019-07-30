@@ -3,9 +3,8 @@
 This application is a SwiftUI implementation of the iOS Weather app.
 It currently runs on iOS but the goal is to run on macOS and iPadOS too.
 
-<p float="center">
-  <image src="https://user-images.githubusercontent.com/22772021/62136090-b1187080-b2e3-11e9-87ed-6675fc9752eb.png" width="300"/>
-  <image src="https://user-images.githubusercontent.com/22772021/62136136-c55c6d80-b2e3-11e9-87c0-f534bf01cde8.gif" width="300"/>
+<p float="left">
+  <image src="https://user-images.githubusercontent.com/22772021/62136090-b1187080-b2e3-11e9-87ed-6675fc9752eb.png" width="500"/>
 </p>
 
 ## API
