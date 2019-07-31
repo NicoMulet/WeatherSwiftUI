@@ -9,7 +9,7 @@
 import Combine
 import SwiftUI
 
-class CityData: BindableObject {
+class CityData: ObservableObject {
     let willChange = PassthroughSubject<CityData, Never>()
     
     let cities = ["Paris", "London", "San Francisco"]

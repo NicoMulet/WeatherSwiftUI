@@ -9,33 +9,12 @@
 import Combine
 import SwiftUI
 
-class WeatherCityData: BindableObject {
-    let willChange = PassthroughSubject<WeatherCityData, Never>()
+class WeatherCityData: ObservableObject {
     let city: String
     
-    var weatherDetail: WeatherDetail? {
-        didSet {
-            if weatherDailyForecast != nil {
-                willChange.send(self)
-            }
-        }
-    }
-    
-    var weatherDailyForecast: WeatherForecast? {
-        didSet {
-            if weatherDetail != nil {
-                willChange.send(self)
-            }
-        }
-    }
-    
-    var weatherHourlyForecast: WeatherForecast? {
-        didSet {
-            if weatherDetail != nil, weatherDailyForecast != nil {
-                willChange.send(self)
-            }
-        }
-    }
+    @Published var weatherDetail: WeatherDetail? = nil
+    @Published var weatherDailyForecast: WeatherForecast? = nil
+    @Published var weatherHourlyForecast: WeatherForecast? = nil
     
     init(city: String) {
         self.city = city

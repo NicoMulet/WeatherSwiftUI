@@ -10,19 +10,12 @@ import SwiftUI
 import UIKit
 import Combine
 
-final class ImageData: BindableObject {
-    let willChange = PassthroughSubject<Void, Never>()
+final class ImageData: ObservableObject {
     var cancellable: AnyCancellable?
     
     let icon: String
     
-    var image: UIImage? = nil {
-        willSet {
-            if newValue != nil {
-                self.willChange.send()
-            }
-        }
-    }
+    @Published var image: UIImage? = nil
     
     init(icon: String) {
         self.icon = icon

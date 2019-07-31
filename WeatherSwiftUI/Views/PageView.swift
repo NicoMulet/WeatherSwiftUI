@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PageView: View {
-    @ObjectBinding var cityData: CityData
+    @ObservedObject var cityData: CityData
     var viewControllers: [UIHostingController<WeatherCityView>]
 
     init(cityData: CityData) {

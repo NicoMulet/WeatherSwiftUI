@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct WeatherIcon: View {
-    @ObjectBinding var imageData: ImageData
+    @ObservedObject var imageData: ImageData
     
     var body: some View {
         Group {

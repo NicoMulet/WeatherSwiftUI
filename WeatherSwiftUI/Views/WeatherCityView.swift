@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct WeatherCityView: View {
-    @ObjectBinding var weatherCityStore: WeatherCityData
+    @ObservedObject var weatherCityStore: WeatherCityData
     
     var body: some View {
         Group {
