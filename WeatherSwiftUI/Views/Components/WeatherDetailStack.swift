@@ -12,13 +12,15 @@ struct WeatherDetailStack: View {
     var weatherDetail: WeatherDetail
     
     var body: some View {
-        HStack(spacing: 0.0) {
+        HStack(alignment: .top, spacing: 0.0) {
             VStack(alignment: .leading, spacing: 4.0) {
                 WeatherDetailInformation(title: "SUNRISE", value: Date(timeIntervalSince1970: weatherDetail.sys.sunrise).timeOfTheDay)
                 Divider()
                 WeatherDetailInformation(title: "WIND", value: "\(weatherDetail.wind.direction) \(Int(weatherDetail.wind.speed)) km/hr")
                 Divider()
-                WeatherDetailInformation(title: "VISIBILITY", value: "\(weatherDetail.visibility / 1000) km")
+                if weatherDetail.visibility != nil {
+                    WeatherDetailInformation(title: "VISIBILITY", value: "\(weatherDetail.visibility! / 1000) km")
+                }
             }
             
             VStack(alignment: .leading, spacing: 4.0) {
@@ -26,7 +28,7 @@ struct WeatherDetailStack: View {
                 Divider()
                 WeatherDetailInformation(title: "HUMIDITY", value: "\(weatherDetail.main.humidity) %")
                 Divider()
-                WeatherDetailInformation(title: "PRESSURE", value: "\(weatherDetail.main.pressure) hPa")
+                WeatherDetailInformation(title: "PRESSURE", value: "\(Int(weatherDetail.main.pressure)) hPa")
             }
         }
     }

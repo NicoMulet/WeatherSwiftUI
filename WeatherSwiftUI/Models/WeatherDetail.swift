@@ -19,7 +19,7 @@ struct WeatherDetail: Codable, Identifiable {
     }
     
     let base: String
-    let visibility: Int
+    let visibility: Int?
     let clouds: Cloud
     let wind: Wind
     
@@ -36,7 +36,7 @@ struct WeatherDetail: Codable, Identifiable {
         var temperature: Kelvin {
             return Kelvin(kelvin: temp)
         }
-        let pressure: Int
+        let pressure: Float
         let humidity: Int
         let temp_min: Double
         var tempMin: Kelvin {
@@ -52,8 +52,8 @@ struct WeatherDetail: Codable, Identifiable {
     let main: Main
     
     struct Sys: Codable, Identifiable {
-        let id: Int
-        let type: Int
+        let id = UUID()
+        let type: Int?
         let message: Float
         let country: String
         let sunrise: TimeInterval
@@ -80,8 +80,7 @@ let sampleWeatherDetail = WeatherDetail(id: 0,
                                                                  humidity: 81,
                                                                  temp_min: 279.15,
                                                                  temp_max: 281.15),
-                                        sys: WeatherDetail.Sys(id: 5091,
-                                                               type: 1,
+                                        sys: WeatherDetail.Sys(type: 1,
                                                                message: 0.0103,
                                                                country: "FR",
                                                                sunrise: 1485762037,
