@@ -17,7 +17,9 @@ struct CityList: View {
                 NavigationLink(destination: PageView(allWeathers: self.allWeathers)) {
                     CityCell(allWeather: allWeather)
                 }
-            }.navigationBarTitle(Text("Cities"))
+            }
+            .navigationBarTitle(Text("Cities"))
+            .navigationBarHidden(true)
         }
     }
 }
