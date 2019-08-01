@@ -10,7 +10,7 @@ import Foundation
 
 struct Wind: Codable {
     let speed: Float
-    let deg: Float
+    let deg: Float?
     
     enum Direction: String {
         case North = "N"
@@ -43,7 +43,11 @@ struct Wind: Codable {
         }
     }
     
-    var direction: String {
-        return Direction(deg: deg).rawValue
+    var direction: String? {
+        if let deg = deg {
+            return Direction(deg: deg).rawValue
+        }
+        
+        return nil
     }
 }

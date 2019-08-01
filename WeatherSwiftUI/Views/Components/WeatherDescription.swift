@@ -15,7 +15,6 @@ struct WeatherDescription: View {
     
     var body: some View {
         Text("Today: \(description) currently. It's \(currentTemp)°; the high today was forecast as \(maxTemp)°.")
-            .lineLimit(nil)
     }
 }
 

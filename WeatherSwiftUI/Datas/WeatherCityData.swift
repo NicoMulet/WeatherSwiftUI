@@ -20,7 +20,7 @@ class WeatherCityData: ObservableObject {
         self.city = city
     }
     
-    func fetch() {
+    func fetch(completion: @escaping () -> Void) {
         APIService.shared.GET(endpoint: .weather, params: ["q": city]) { (result: Result<WeatherDetail, APIService.APIError>) in
             switch result {
             case .success(_):
@@ -44,6 +44,10 @@ class WeatherCityData: ObservableObject {
                                                                                    humidity: weatherDetail.main.humidity,
                                                                                    temp_kf: 0.0)),
                             at: 0)
+                    }
+                    
+                    if self.weatherHourlyForecast != nil, self.weatherDailyForecast != nil {
+                        completion()
                     }
                 }
             case .failure(_):
@@ -95,6 +99,10 @@ class WeatherCityData: ObservableObject {
                     }
                     
                     self.weatherHourlyForecast = weatherForecast
+                    
+                    if self.weatherDetail != nil {
+                        completion()
+                    }
                 }
             case .failure(_):
                 break

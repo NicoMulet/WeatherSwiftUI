@@ -9,9 +9,19 @@
 import SwiftUI
 
 struct WeatherCityContainer: View {
-    var weatherDetail: WeatherDetail
-    var weatherDailyForecast: WeatherForecast
-    var weatherHourlyForecast: WeatherForecast
+    var allWeather: AllWeather
+    
+    var weatherDetail: WeatherDetail {
+        return allWeather.weatherDetail
+    }
+    
+    var weatherDailyForecast: WeatherForecast {
+        return allWeather.weatherDailyForecast
+    }
+    
+    var weatherHourlyForecast: WeatherForecast {
+        return allWeather.weatherHourlyForecast
+    }
     
     var body: some View {
         List {
@@ -25,17 +35,3 @@ struct WeatherCityContainer: View {
         }
     }
 }
-
-#if DEBUG
-struct WeatherCityContainer_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherCityContainer(weatherDetail: sampleWeatherDetail,
-                             weatherDailyForecast: WeatherForecast(list: [weatherForecastSample,
-                                                                          weatherForecastSample,
-                                                                          weatherForecastSample]),
-                             weatherHourlyForecast: WeatherForecast(list: [weatherForecastSample,
-                                                                           weatherForecastSample,
-                                                                           weatherForecastSample]))
-    }
-}
-#endif

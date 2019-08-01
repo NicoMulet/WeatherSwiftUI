@@ -10,7 +10,18 @@ import Combine
 import SwiftUI
 
 class CityData: ObservableObject {
-    let willChange = PassthroughSubject<CityData, Never>()
-    
     let cities = ["Paris", "London", "San Francisco"]
+    
+    @Published var allWeathers = [AllWeather]()
+    
+    func fetchAll() {
+        for city in cities {
+            let weatherCityData = WeatherCityData(city: city)
+            weatherCityData.fetch() {
+                self.allWeathers.append(AllWeather(weatherDetail: weatherCityData.weatherDetail!,
+                                                   weatherHourlyForecast: weatherCityData.weatherHourlyForecast!,
+                                                   weatherDailyForecast: weatherCityData.weatherDailyForecast!))
+            }
+        }
+    }
 }

@@ -29,7 +29,7 @@ extension Date {
     
     var timeOfTheDay: String {
         let dateFormatter = DateFormatter.shared
-        dateFormatter.dateFormat = "hh:mm"
+        dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: self)
     }
 }

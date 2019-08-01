@@ -14,9 +14,12 @@ struct WeatherDetailTitleView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 32.0) {
             VStack {
-                Text(weatherDetail.name).font(.title)
-                Text(weatherDetail.weather[0].main).font(.caption)
-                Text("\(weatherDetail.main.temperature.toCelsius())°").font(.largeTitle)
+                Text(weatherDetail.name)
+                    .font(.title)
+                Text(weatherDetail.weather[0].main)
+                    .font(.caption)
+                Text("\(weatherDetail.main.temperature.toCelsius())°")
+                    .font(.largeTitle)
             }
             
             HStack(alignment: .bottom, spacing: 12.0) {

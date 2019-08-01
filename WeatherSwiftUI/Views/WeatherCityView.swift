@@ -9,27 +9,11 @@
 import SwiftUI
 
 struct WeatherCityView: View {
-    @ObservedObject var weatherCityStore: WeatherCityData
+    var allWeather: AllWeather
     
     var body: some View {
         Group {
-            if weatherCityStore.weatherDailyForecast == nil
-                || weatherCityStore.weatherHourlyForecast == nil
-                || weatherCityStore.weatherDetail == nil {
-                LoadingView()
-            } else {
-                WeatherCityContainer(weatherDetail: weatherCityStore.weatherDetail!,
-                                     weatherDailyForecast: weatherCityStore.weatherDailyForecast!,
-                                     weatherHourlyForecast: weatherCityStore.weatherHourlyForecast!)
-            }
-        }.onAppear(perform: weatherCityStore.fetch)
+            WeatherCityContainer(allWeather: allWeather)
+        }
     }
 }
-
-#if DEBUG
-struct WeatherCityView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherCityView(weatherCityStore: WeatherCityData(city: "Paris"))
-    }
-}
-#endif

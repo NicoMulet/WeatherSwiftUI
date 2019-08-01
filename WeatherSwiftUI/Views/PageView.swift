@@ -9,22 +9,16 @@
 import SwiftUI
 
 struct PageView: View {
-    @ObservedObject var cityData: CityData
+    var allWeathers: [AllWeather]
     var viewControllers: [UIHostingController<WeatherCityView>]
 
-    init(cityData: CityData) {
-        let weatherCityViews = cityData.cities.map { WeatherCityView(weatherCityStore: WeatherCityData(city: $0)) }
+    init(allWeathers: [AllWeather]) {
+        let weatherCityViews = allWeathers.map { WeatherCityView(allWeather: $0) }
         self.viewControllers = weatherCityViews.map { UIHostingController(rootView: $0) }
-        self.cityData = cityData
+        self.allWeathers = allWeathers
     }
 
     var body: some View {
         PageViewController(controllers: viewControllers)
-    }
-}
-
-struct PageView_Preview: PreviewProvider {
-    static var previews: some View {
-        PageView(cityData: CityData())
     }
 }
