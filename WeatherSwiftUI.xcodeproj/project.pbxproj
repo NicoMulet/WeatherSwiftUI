@@ -33,6 +33,7 @@
 		BB4F0CD722F326B60074AB95 /* CityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F0CD622F326B60074AB95 /* CityList.swift */; };
 		BB4F0CD922F32D4F0074AB95 /* AllWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F0CD822F32D4F0074AB95 /* AllWeather.swift */; };
 		BB4F0CDB22F3328B0074AB95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F0CDA22F3328B0074AB95 /* HomeView.swift */; };
+		BB4F0CDD22F34B750074AB95 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F0CDC22F34B750074AB95 /* BottomBar.swift */; };
 		BBACDFA522ECBC35000AD46B /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACDFA422ECBC35000AD46B /* WeatherDescription.swift */; };
 		BBACDFA722ECCB18000AD46B /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACDFA622ECCB18000AD46B /* Rain.swift */; };
 		BBACDFA922ECD6DF000AD46B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACDFA822ECD6DF000AD46B /* LoadingView.swift */; };
@@ -76,6 +77,7 @@
 		BB4F0CD622F326B60074AB95 /* CityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityList.swift; sourceTree = "<group>"; };
 		BB4F0CD822F32D4F0074AB95 /* AllWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWeather.swift; sourceTree = "<group>"; };
 		BB4F0CDA22F3328B0074AB95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BB4F0CDC22F34B750074AB95 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		BBACDFA422ECBC35000AD46B /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherDescription.swift; path = "../../../../../../../System/Volumes/Data/Users/nicolasmulet/iOS export/WeatherSwiftUI/WeatherSwiftUI/Views/Components/WeatherDescription.swift"; sourceTree = "<group>"; };
 		BBACDFA622ECCB18000AD46B /* Rain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Rain.swift; path = "../../../../../../System/Volumes/Data/Users/nicolasmulet/iOS export/WeatherSwiftUI/WeatherSwiftUI/Models/Rain.swift"; sourceTree = "<group>"; };
 		BBACDFA822ECD6DF000AD46B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		BB02D70122EC788300C6D4A4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BB4F0CDC22F34B750074AB95 /* BottomBar.swift */,
 				BB4F0CD422F3247C0074AB95 /* CityCell.swift */,
 				BB4F0CD622F326B60074AB95 /* CityList.swift */,
 				BBE96B4722EDFC5300C8DFB6 /* TemperatureView.swift */,
@@ -301,6 +304,7 @@
 				BBACDFB222EDA500000AD46B /* Kelvin.swift in Sources */,
 				BBE96B4E22EE02C900C8DFB6 /* CityData.swift in Sources */,
 				BB4F0CD522F3247C0074AB95 /* CityCell.swift in Sources */,
+				BB4F0CDD22F34B750074AB95 /* BottomBar.swift in Sources */,
 				BB02D6D622EC5A7900C6D4A4 /* AppDelegate.swift in Sources */,
 				BB02D70B22EC7EA600C6D4A4 /* WeatherForecastDetail.swift in Sources */,
 				BB02D70022EC6F9300C6D4A4 /* Cloud.swift in Sources */,

@@ -12,8 +12,6 @@ struct WeatherCityView: View {
     var allWeather: AllWeather
     
     var body: some View {
-        Group {
-            WeatherCityContainer(allWeather: allWeather)
-        }
+        WeatherCityContainer(allWeather: allWeather)
     }
 }

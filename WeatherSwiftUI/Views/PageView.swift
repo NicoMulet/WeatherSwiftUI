@@ -19,6 +19,10 @@ struct PageView: View {
     }
 
     var body: some View {
-        PageViewController(controllers: viewControllers)
+        ZStack {
+            PageViewController(controllers: viewControllers)
+            BottomBar()
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
+        }
     }
 }
