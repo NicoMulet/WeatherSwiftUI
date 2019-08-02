@@ -9,17 +9,44 @@
 import SwiftUI
 
 struct CityList: View {
+    @ObservedObject var temperatureData: TemperatureData
     var allWeathers: [AllWeather]
+    
+    @State var showNewCityModal = false
+    var degrees = ["°C", "°F"]
     
     var body: some View {
         NavigationView {
-            List(allWeathers) { allWeather in
-                NavigationLink(destination: PageView(allWeathers: self.allWeathers)) {
-                    CityCell(allWeather: allWeather)
+            VStack {
+                List {
+                    ForEach(allWeathers) { allWeather in
+                        NavigationLink(destination: PageView(allWeathers: self.allWeathers)) {
+                            CityCell(temperatureData: self.temperatureData, allWeather: allWeather)
+                        }
+                    }
+                    
+                    HStack {
+                        Picker("Degree choice", selection: $temperatureData.temperatureUnit) {
+                            ForEach(0 ..< degrees.count) { index in
+                                Text(self.degrees[index])
+                                    .tag(index)
+                            }
+                        }.pickerStyle(SegmentedPickerStyle())
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            self.showNewCityModal = true
+                        }) {
+                            Image(systemName: "plus.circle")
+                                .foregroundColor(.primary)
+                        }
+                    }
                 }
+                .navigationBarTitle(Text("Cities"))
+                .navigationBarHidden(true)
             }
-            .navigationBarTitle(Text("Cities"))
-            .navigationBarHidden(true)
         }
+        .sheet(isPresented: $showNewCityModal, content: { NewCityModal() })
     }
 }

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct CityCell: View {
+    @ObservedObject var temperatureData: TemperatureData
     var allWeather: AllWeather
     
     var body: some View {
@@ -22,7 +23,7 @@ struct CityCell: View {
             
             Spacer()
             
-            Text("\(allWeather.weatherDetail.main.temperature.toCelsius())°")
+            Text("\(temperatureData.temperature(allWeather.weatherDetail.main.temperature))°")
                 .font(.largeTitle)
         }
     }

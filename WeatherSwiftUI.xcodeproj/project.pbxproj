@@ -34,6 +34,8 @@
 		BB4F0CD922F32D4F0074AB95 /* AllWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F0CD822F32D4F0074AB95 /* AllWeather.swift */; };
 		BB4F0CDB22F3328B0074AB95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F0CDA22F3328B0074AB95 /* HomeView.swift */; };
 		BB4F0CDD22F34B750074AB95 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F0CDC22F34B750074AB95 /* BottomBar.swift */; };
+		BB8DF81A22F46AA000BC9970 /* TemperatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8DF81922F46AA000BC9970 /* TemperatureData.swift */; };
+		BB8DF81C22F4704600BC9970 /* NewCityModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8DF81B22F4704600BC9970 /* NewCityModal.swift */; };
 		BBACDFA522ECBC35000AD46B /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACDFA422ECBC35000AD46B /* WeatherDescription.swift */; };
 		BBACDFA722ECCB18000AD46B /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACDFA622ECCB18000AD46B /* Rain.swift */; };
 		BBACDFA922ECD6DF000AD46B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACDFA822ECD6DF000AD46B /* LoadingView.swift */; };
@@ -78,6 +80,8 @@
 		BB4F0CD822F32D4F0074AB95 /* AllWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWeather.swift; sourceTree = "<group>"; };
 		BB4F0CDA22F3328B0074AB95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BB4F0CDC22F34B750074AB95 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
+		BB8DF81922F46AA000BC9970 /* TemperatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureData.swift; sourceTree = "<group>"; };
+		BB8DF81B22F4704600BC9970 /* NewCityModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCityModal.swift; sourceTree = "<group>"; };
 		BBACDFA422ECBC35000AD46B /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherDescription.swift; path = "../../../../../../../System/Volumes/Data/Users/nicolasmulet/iOS export/WeatherSwiftUI/WeatherSwiftUI/Views/Components/WeatherDescription.swift"; sourceTree = "<group>"; };
 		BBACDFA622ECCB18000AD46B /* Rain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Rain.swift; path = "../../../../../../System/Volumes/Data/Users/nicolasmulet/iOS export/WeatherSwiftUI/WeatherSwiftUI/Models/Rain.swift"; sourceTree = "<group>"; };
 		BBACDFA822ECD6DF000AD46B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				BB02D6EF22EC683A00C6D4A4 /* WeatherCityContainer.swift */,
 				BBACDFAE22ECD81A000AD46B /* WeatherCityView.swift */,
 				BB02D70122EC788300C6D4A4 /* Components */,
+				BB8DF81B22F4704600BC9970 /* NewCityModal.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			children = (
 				BBE96B4D22EE02C900C8DFB6 /* CityData.swift */,
 				BBACDFB522EDB4BD000AD46B /* ImageData.swift */,
+				BB8DF81922F46AA000BC9970 /* TemperatureData.swift */,
 				BB02D6F222EC697F00C6D4A4 /* WeatherCityData.swift */,
 			);
 			path = Datas;
@@ -317,6 +323,7 @@
 				BB02D6FC22EC6E4E00C6D4A4 /* Wind.swift in Sources */,
 				BB02D70722EC7D6B00C6D4A4 /* WeatherDailyForecastList.swift in Sources */,
 				BB02D71422ECABEB00C6D4A4 /* Date.swift in Sources */,
+				BB8DF81A22F46AA000BC9970 /* TemperatureData.swift in Sources */,
 				BB02D70F22EC837200C6D4A4 /* WeatherForecast.swift in Sources */,
 				BB02D6F322EC697F00C6D4A4 /* WeatherCityData.swift in Sources */,
 				BB02D71122EC8A2B00C6D4A4 /* WeatherDetailTitleView.swift in Sources */,
@@ -325,6 +332,7 @@
 				BB02D71722ECB05B00C6D4A4 /* WeatherHourlyForecastList.swift in Sources */,
 				BB4F0CD722F326B60074AB95 /* CityList.swift in Sources */,
 				BBACDFB622EDB4BD000AD46B /* ImageData.swift in Sources */,
+				BB8DF81C22F4704600BC9970 /* NewCityModal.swift in Sources */,
 				BB02D70322EC789400C6D4A4 /* WeatherDetailInformation.swift in Sources */,
 				BBACDFAF22ECD81A000AD46B /* WeatherCityView.swift in Sources */,
 				BB02D6D822EC5A7900C6D4A4 /* SceneDelegate.swift in Sources */,

@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 class CityData: ObservableObject {
-    let cities = ["Paris", "London", "San Francisco"]
+    let cities = ["Paris", "London", "New York"]
     
     @Published var allWeathers = [AllWeather]()
     

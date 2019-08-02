@@ -16,7 +16,7 @@ struct HomeView: View {
             if cityData.cities.count != cityData.allWeathers.count {
                 LoadingView()
             } else {
-                CityList(allWeathers: cityData.allWeathers)
+                CityList(temperatureData: TemperatureData(), allWeathers: cityData.allWeathers)
             }
         }.onAppear(perform: cityData.fetchAll)
     }

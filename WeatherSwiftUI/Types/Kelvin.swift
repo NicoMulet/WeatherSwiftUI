@@ -18,6 +18,10 @@ public struct Kelvin: Codable {
     func toCelsius() -> Int {
         return Int(kelvin - 273.15)
     }
+    
+    func toFahrenheit() -> Int {
+        return Int((kelvin * 9 / 5) - 459.67)
+    }
 }
 
 extension Kelvin: ExpressibleByFloatLiteral {
