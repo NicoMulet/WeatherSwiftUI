@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WeatherDailyForecastDetailView: View {
+    @ObservedObject var temperatureData: TemperatureData
     var weatherDailyForecast: WeatherForecastDetail
     
     var body: some View {
@@ -20,16 +21,8 @@ struct WeatherDailyForecastDetailView: View {
                 .frame(width: 35.0, height: 35.0, alignment: .center)
                 .padding(.trailing, 70.0)
             
-            TemperatureView(tempMin: weatherDailyForecast.main.tempMin.toCelsius(),
-                            tempMax: weatherDailyForecast.main.tempMax.toCelsius())
+            TemperatureView(tempMin: temperatureData.temperature(weatherDailyForecast.main.tempMin),
+                            tempMax: temperatureData.temperature(weatherDailyForecast.main.tempMax))
         }
     }
 }
-
-#if DEBUG
-struct WeatherDailyForecastDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherDailyForecastDetailView(weatherDailyForecast: weatherForecastSample)
-    }
-}
-#endif

@@ -9,12 +9,14 @@
 import SwiftUI
 
 struct PageView: View {
+    var temperatureData: TemperatureData
     var allWeathers: [AllWeather]
     var viewControllers: [UIHostingController<WeatherCityView>]
 
-    init(allWeathers: [AllWeather]) {
-        let weatherCityViews = allWeathers.map { WeatherCityView(allWeather: $0) }
+    init(temperatureData: TemperatureData, allWeathers: [AllWeather]) {
+        let weatherCityViews = allWeathers.map { WeatherCityView(temperatureData: temperatureData, allWeather: $0) }
         self.viewControllers = weatherCityViews.map { UIHostingController(rootView: $0) }
+        self.temperatureData = temperatureData
         self.allWeathers = allWeathers
     }
 

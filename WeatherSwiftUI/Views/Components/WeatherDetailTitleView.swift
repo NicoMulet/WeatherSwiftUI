@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WeatherDetailTitleView: View {
+    @ObservedObject var temperatureData: TemperatureData
     var weatherDetail: WeatherDetail
     
     var body: some View {
@@ -18,7 +19,7 @@ struct WeatherDetailTitleView: View {
                     .font(.title)
                 Text(weatherDetail.weather[0].main)
                     .font(.caption)
-                Text("\(weatherDetail.main.temperature.toCelsius())°")
+                Text("\(temperatureData.temperature(weatherDetail.main.temperature))°")
                     .font(.largeTitle)
             }
             
@@ -27,16 +28,9 @@ struct WeatherDetailTitleView: View {
                 Text("TODAY").font(.headline)
                 Spacer()
                 
-                TemperatureView(tempMin: weatherDetail.main.tempMin.toCelsius(), tempMax: weatherDetail.main.tempMax.toCelsius())
+                TemperatureView(tempMin: temperatureData.temperature(weatherDetail.main.tempMin),
+                                tempMax: temperatureData.temperature(weatherDetail.main.tempMax))
             }
         }
     }
 }
-
-#if DEBUG
-struct WeatherDetailTitleView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherDetailTitleView(weatherDetail: sampleWeatherDetail)
-    }
-}
-#endif

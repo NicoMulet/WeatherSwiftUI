@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WeatherHourlyForecastDetailView: View {
+    @ObservedObject var temperatureData: TemperatureData
     var weatherHourlyForecast: WeatherForecastDetail
     
     var body: some View {
@@ -26,7 +27,7 @@ struct WeatherHourlyForecastDetailView: View {
                 }
                 
                 WeatherIcon(imageData: ImageData(icon: weatherHourlyForecast.weather[0].icon))
-                Text("\(weatherHourlyForecast.main.temperature.toCelsius())°")
+                Text("\(temperatureData.temperature(weatherHourlyForecast.main.temperature))°")
             } else {
                 Text(weatherHourlyForecast.date.hourOfTheDay)
                 
@@ -39,17 +40,9 @@ struct WeatherHourlyForecastDetailView: View {
                 }
                 
                 WeatherIcon(imageData: ImageData(icon: weatherHourlyForecast.weather[0].icon))
-                Text("\(weatherHourlyForecast.main.temperature.toCelsius())°")
+                Text("\(temperatureData.temperature(weatherHourlyForecast.main.temperature))°")
             }
         }
         .frame(width: 50.0)
     }
 }
-
-#if DEBUG
-struct WeatherHourlyForecastDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherHourlyForecastDetailView(weatherHourlyForecast: weatherForecastSample)
-    }
-}
-#endif

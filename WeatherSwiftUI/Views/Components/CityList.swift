@@ -20,7 +20,8 @@ struct CityList: View {
             VStack {
                 List {
                     ForEach(allWeathers) { allWeather in
-                        NavigationLink(destination: PageView(allWeathers: self.allWeathers)) {
+                        NavigationLink(destination: PageView(temperatureData: self.temperatureData,
+                                                             allWeathers: self.allWeathers)) {
                             CityCell(temperatureData: self.temperatureData, allWeather: allWeather)
                         }
                     }

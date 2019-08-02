@@ -36,11 +36,3 @@ struct WeatherDetailStack: View {
         }
     }
 }
-
-#if DEBUG
-struct WeatherDetailStack_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherDetailStack(weatherDetail: sampleWeatherDetail)
-    }
-}
-#endif
