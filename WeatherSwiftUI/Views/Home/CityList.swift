@@ -48,7 +48,6 @@ struct CityList: View {
                     }
                 }
                 .navigationBarTitle(Text("Cities"))
-                .navigationBarHidden(true)
             }
         }
         .sheet(isPresented: $showNewCityModal, content: { NewCityModal() })
