@@ -11,6 +11,7 @@ import UIKit
 
 struct PageViewController: UIViewControllerRepresentable {
     var controllers: [UIViewController]
+    var firstIndex: Int
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -24,7 +25,7 @@ struct PageViewController: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
-        pageViewController.setViewControllers([controllers[0]], direction: .forward, animated: true)
+        pageViewController.setViewControllers([controllers[firstIndex]], direction: .forward, animated: true)
     }
     
     class Coordinator: NSObject, UIPageViewControllerDataSource {

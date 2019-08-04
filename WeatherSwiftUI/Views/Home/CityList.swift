@@ -21,7 +21,10 @@ struct CityList: View {
                 List {
                     ForEach(allWeathers) { allWeather in
                         NavigationLink(destination: PageView(temperatureData: self.temperatureData,
-                                                             allWeathers: self.allWeathers)) {
+                                                             allWeathers: self.allWeathers,
+                                                             firstIndex: self.allWeathers.firstIndex(where: {
+                                                                $0.id == allWeather.id
+                                                             }) ?? 0)) {
                             CityCell(temperatureData: self.temperatureData, allWeather: allWeather)
                         }
                     }

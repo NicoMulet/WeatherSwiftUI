@@ -12,17 +12,19 @@ struct PageView: View {
     var temperatureData: TemperatureData
     var allWeathers: [AllWeather]
     var viewControllers: [UIHostingController<WeatherCityView>]
+    var firstIndex: Int
 
-    init(temperatureData: TemperatureData, allWeathers: [AllWeather]) {
+    init(temperatureData: TemperatureData, allWeathers: [AllWeather], firstIndex: Int) {
         let weatherCityViews = allWeathers.map { WeatherCityView(temperatureData: temperatureData, allWeather: $0) }
         self.viewControllers = weatherCityViews.map { UIHostingController(rootView: $0) }
         self.temperatureData = temperatureData
         self.allWeathers = allWeathers
+        self.firstIndex = firstIndex
     }
 
     var body: some View {
         ZStack {
-            PageViewController(controllers: viewControllers)
+            PageViewController(controllers: viewControllers, firstIndex: firstIndex)
             BottomBar()
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .bottom)
         }
