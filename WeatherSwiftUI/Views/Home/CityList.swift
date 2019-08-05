@@ -22,7 +22,7 @@ struct CityList: View {
                     ForEach(0 ..< allWeathers.count) { index in
                         NavigationLink(destination: PageView(temperatureData: self.temperatureData,
                                                              allWeathers: self.allWeathers,
-                                                             firstIndex: index)) {
+                                                             currentPage: index)) {
                                 CityCell(temperatureData: self.temperatureData,
                                          allWeather: self.allWeathers[index],
                                          isCurrentLocation: index == 0)

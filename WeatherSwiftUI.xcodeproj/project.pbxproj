@@ -47,6 +47,7 @@
 		BBACDFB422EDB303000AD46B /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACDFB322EDB303000AD46B /* ImageService.swift */; };
 		BBACDFB622EDB4BD000AD46B /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACDFB522EDB4BD000AD46B /* ImageData.swift */; };
 		BBE96B4E22EE02C900C8DFB6 /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE96B4D22EE02C900C8DFB6 /* CityData.swift */; };
+		BBF4BF2D22F849C0009C5062 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4BF2C22F849C0009C5062 /* PageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		BBACDFB322EDB303000AD46B /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageService.swift; path = "../../../../../../System/Volumes/Data/Users/nicolasmulet/iOS export/WeatherSwiftUI/WeatherSwiftUI/Services/ImageService.swift"; sourceTree = "<group>"; };
 		BBACDFB522EDB4BD000AD46B /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageData.swift; path = "../../../../../../System/Volumes/Data/Users/nicolasmulet/iOS export/WeatherSwiftUI/WeatherSwiftUI/Datas/ImageData.swift"; sourceTree = "<group>"; };
 		BBE96B4D22EE02C900C8DFB6 /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityData.swift; path = "../../../../../../System/Volumes/Data/Users/nicolasmulet/iOS export/WeatherSwiftUI/WeatherSwiftUI/Datas/CityData.swift"; sourceTree = "<group>"; };
+		BBF4BF2C22F849C0009C5062 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				BBACDFA822ECD6DF000AD46B /* LoadingView.swift */,
+				BBF4BF2C22F849C0009C5062 /* PageControl.swift */,
 				BB50447922F47CCD0098A323 /* PageViewController.swift */,
 				BB50447C22F47CF90098A323 /* TemperatureView.swift */,
 				BB50447E22F47D400098A323 /* WeatherIcon.swift */,
@@ -338,6 +341,7 @@
 				BB02D71422ECABEB00C6D4A4 /* Date.swift in Sources */,
 				BB50447F22F47D400098A323 /* WeatherIcon.swift in Sources */,
 				BB8DF81A22F46AA000BC9970 /* TemperatureData.swift in Sources */,
+				BBF4BF2D22F849C0009C5062 /* PageControl.swift in Sources */,
 				BB02D70F22EC837200C6D4A4 /* WeatherForecast.swift in Sources */,
 				BB02D6F322EC697F00C6D4A4 /* WeatherCityData.swift in Sources */,
 				BB02D71122EC8A2B00C6D4A4 /* WeatherDetailTitleView.swift in Sources */,
