@@ -41,17 +41,17 @@ class CityData: ObservableObject {
             weatherCityData.fetch() {
                 var tmpWeathers = [AllWeather]()
                 tmpWeathers.append(AllWeather(weatherDetail: weatherCityData.weatherDetail!,
-                                                   weatherHourlyForecast: weatherCityData.weatherHourlyForecast!,
-                                                   weatherDailyForecast: weatherCityData.weatherDailyForecast!))
+                                              weatherHourlyForecast: weatherCityData.weatherHourlyForecast!,
+                                              weatherDailyForecast: weatherCityData.weatherDailyForecast!))
                 
-                for allWeather in tmpWeathers {
+                tmpWeathers.forEach({ allWeather in
                     if let index = self.cities.firstIndex(of: allWeather.weatherDetail.name),
                         index <= self.allWeathers.count {
                         self.allWeathers.insert(allWeather, at: index)
                     } else {
                         self.allWeathers.append(allWeather)
                     }
-                }
+                })
             }
         }
     }
