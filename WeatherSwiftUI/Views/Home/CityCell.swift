@@ -11,14 +11,23 @@ import SwiftUI
 struct CityCell: View {
     @ObservedObject var temperatureData: TemperatureData
     var allWeather: AllWeather
+    var isCurrentLocation: Bool
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading) {
-                Text("\(allWeather.weatherDetail.date.timeOfTheDay)")
-                    .font(.caption)
-                Text("\(allWeather.weatherDetail.name)")
+            if isCurrentLocation {
+                HStack {
+                    Text("\(allWeather.weatherDetail.name)")
                     .font(.title)
+                    Image(systemName: "location.fill")
+                }
+            } else {
+                VStack(alignment: .leading) {
+                    Text("\(allWeather.weatherDetail.date.timeOfTheDay)")
+                        .font(.caption)
+                    Text("\(allWeather.weatherDetail.name)")
+                        .font(.title)
+                }
             }
             
             Spacer()

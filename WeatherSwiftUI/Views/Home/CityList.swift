@@ -19,13 +19,13 @@ struct CityList: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(allWeathers) { allWeather in
+                    ForEach(0 ..< allWeathers.count) { index in
                         NavigationLink(destination: PageView(temperatureData: self.temperatureData,
                                                              allWeathers: self.allWeathers,
-                                                             firstIndex: self.allWeathers.firstIndex(where: {
-                                                                $0.id == allWeather.id
-                                                             }) ?? 0)) {
-                            CityCell(temperatureData: self.temperatureData, allWeather: allWeather)
+                                                             firstIndex: index)) {
+                                CityCell(temperatureData: self.temperatureData,
+                                         allWeather: self.allWeathers[index],
+                                         isCurrentLocation: index == 0)
                         }
                     }
                     

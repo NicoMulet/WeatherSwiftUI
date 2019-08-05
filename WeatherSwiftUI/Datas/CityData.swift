@@ -7,20 +7,51 @@
 //
 
 import Combine
-import SwiftUI
+import MapKit
 
 class CityData: ObservableObject {
-    let cities = ["Paris", "London", "New York"]
+    var cities = ["Paris", "London", "New York"]
+    let locationManager: CLLocationManager
     
     @Published var allWeathers = [AllWeather]()
     
+    init() {
+        self.locationManager = CLLocationManager()
+        
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
     func fetchAll() {
+        if CLLocationManager.locationServicesEnabled(), let location = locationManager.location {
+            CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+                if let currentCity = placemarks?.first?.locality {
+                    self.cities.insert(currentCity, at: 0)
+                    
+                    self.fetch()
+                }
+            }
+        } else {
+            fetch()
+        }
+    }
+    
+    private func fetch() {
         for city in cities {
             let weatherCityData = WeatherCityData(city: city)
             weatherCityData.fetch() {
-                self.allWeathers.append(AllWeather(weatherDetail: weatherCityData.weatherDetail!,
+                var tmpWeathers = [AllWeather]()
+                tmpWeathers.append(AllWeather(weatherDetail: weatherCityData.weatherDetail!,
                                                    weatherHourlyForecast: weatherCityData.weatherHourlyForecast!,
                                                    weatherDailyForecast: weatherCityData.weatherDailyForecast!))
+                
+                for allWeather in tmpWeathers {
+                    if let index = self.cities.firstIndex(of: allWeather.weatherDetail.name),
+                        index <= self.allWeathers.count {
+                        self.allWeathers.insert(allWeather, at: index)
+                    } else {
+                        self.allWeathers.append(allWeather)
+                    }
+                }
             }
         }
     }
