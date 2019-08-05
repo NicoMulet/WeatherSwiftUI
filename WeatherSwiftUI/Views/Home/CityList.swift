@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CityList: View {
     @ObservedObject var temperatureData: TemperatureData
-    var allWeathers: [AllWeather]
+    @ObservedObject var cityData: CityData
     
     @State var showNewCityModal = false
     var degrees = ["°C", "°F"]
@@ -19,12 +19,12 @@ struct CityList: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(0 ..< allWeathers.count) { index in
+                    ForEach(0 ..< cityData.allWeathers.count) { index in
                         NavigationLink(destination: PageView(temperatureData: self.temperatureData,
-                                                             allWeathers: self.allWeathers,
+                                                             allWeathers: self.cityData.allWeathers,
                                                              currentPage: index)) {
                                 CityCell(temperatureData: self.temperatureData,
-                                         allWeather: self.allWeathers[index],
+                                         allWeather: self.cityData.allWeathers[index],
                                          isCurrentLocation: index == 0)
                         }
                     }
@@ -50,6 +50,6 @@ struct CityList: View {
                 .navigationBarTitle(Text("Cities"))
             }
         }
-        .sheet(isPresented: $showNewCityModal, content: { NewCityModal() })
+        .sheet(isPresented: $showNewCityModal, content: { NewCityModal(cityData: self.cityData) })
     }
 }

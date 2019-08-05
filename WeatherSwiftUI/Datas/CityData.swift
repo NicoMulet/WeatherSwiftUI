@@ -10,8 +10,8 @@ import Combine
 import MapKit
 
 class CityData: ObservableObject {
-    var cities = ["Paris", "London", "New York"]
     let locationManager: CLLocationManager
+    var cities = ["Paris", "London", "New York"]
     
     @Published var allWeathers = [AllWeather]()
     
@@ -36,6 +36,8 @@ class CityData: ObservableObject {
     }
     
     private func fetch() {
+        allWeathers.removeAll()
+        
         for city in cities {
             let weatherCityData = WeatherCityData(city: city)
             weatherCityData.fetch() {

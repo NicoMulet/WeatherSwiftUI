@@ -39,6 +39,7 @@
 		BB50447F22F47D400098A323 /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50447E22F47D400098A323 /* WeatherIcon.swift */; };
 		BB50448122F47D630098A323 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50448022F47D630098A323 /* PageView.swift */; };
 		BB50448322F47D7C0098A323 /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50448222F47D7B0098A323 /* WeatherDescription.swift */; };
+		BB75A51922F85BF20050AEC6 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A51822F85BF20050AEC6 /* BigButton.swift */; };
 		BB8DF81A22F46AA000BC9970 /* TemperatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8DF81922F46AA000BC9970 /* TemperatureData.swift */; };
 		BB8DF81C22F4704600BC9970 /* NewCityModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8DF81B22F4704600BC9970 /* NewCityModal.swift */; };
 		BBACDFA722ECCB18000AD46B /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACDFA622ECCB18000AD46B /* Rain.swift */; };
@@ -85,6 +86,7 @@
 		BB50447E22F47D400098A323 /* WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
 		BB50448022F47D630098A323 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BB50448222F47D7B0098A323 /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDescription.swift; sourceTree = "<group>"; };
+		BB75A51822F85BF20050AEC6 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		BB8DF81922F46AA000BC9970 /* TemperatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureData.swift; sourceTree = "<group>"; };
 		BB8DF81B22F4704600BC9970 /* NewCityModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCityModal.swift; sourceTree = "<group>"; };
 		BBACDFA622ECCB18000AD46B /* Rain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Rain.swift; path = "../../../../../../System/Volumes/Data/Users/nicolasmulet/iOS export/WeatherSwiftUI/WeatherSwiftUI/Models/Rain.swift"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		BB50447822F47CBC0098A323 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BB75A51822F85BF20050AEC6 /* BigButton.swift */,
 				BBACDFA822ECD6DF000AD46B /* LoadingView.swift */,
 				BBF4BF2C22F849C0009C5062 /* PageControl.swift */,
 				BB50447922F47CCD0098A323 /* PageViewController.swift */,
@@ -352,6 +355,7 @@
 				BBACDFB622EDB4BD000AD46B /* ImageData.swift in Sources */,
 				BB8DF81C22F4704600BC9970 /* NewCityModal.swift in Sources */,
 				BB02D70322EC789400C6D4A4 /* WeatherDetailInformation.swift in Sources */,
+				BB75A51922F85BF20050AEC6 /* BigButton.swift in Sources */,
 				BB02D6D822EC5A7900C6D4A4 /* SceneDelegate.swift in Sources */,
 				BBACDFA722ECCB18000AD46B /* Rain.swift in Sources */,
 				BB02D6F022EC683A00C6D4A4 /* WeatherCityView.swift in Sources */,

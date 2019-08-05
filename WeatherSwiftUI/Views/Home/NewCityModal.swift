@@ -10,6 +10,7 @@ import SwiftUI
 
 struct NewCityModal: View {
     @Environment(\.presentationMode) var presentationMode
+    var cityData: CityData
     
     @State var city: String = ""
 
@@ -24,8 +25,7 @@ struct NewCityModal: View {
                 
                 if !city.isEmpty {
                     Button(action: {
-                        self.city = ""
-                        self.presentationMode.value.dismiss()
+                        self.closeModal()
                     }) {
                         Text("Cancel")
                             .foregroundColor(.primary)
@@ -34,16 +34,27 @@ struct NewCityModal: View {
             }
             
             Divider()
+            
+            if !city.isEmpty {
+                BigButton(action: addNewCity, imageName: "plus.app", text: "Add this new city", color: .blue)
+                    .animation(.default)
+            }
         }
         .padding()
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
     }
     
-    func addNewCity() {
+    private func addNewCity() {
         guard !city.isEmpty else { return }
         
-        // TODO: Add city to CityData
+        cityData.cities.append(city)
+        cityData.fetchAll()
         
+        closeModal()
+    }
+    
+    private func closeModal() {
         presentationMode.value.dismiss()
+        city = ""
     }
 }
