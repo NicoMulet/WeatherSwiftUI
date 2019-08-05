@@ -15,18 +15,11 @@ struct CityCell: View {
     
     var body: some View {
         HStack {
-            if isCurrentLocation {
-                HStack {
-                    Text("\(allWeather.weatherDetail.name)")
+            HStack {
+                Text("\(allWeather.weatherDetail.name)")
                     .font(.title)
+                if isCurrentLocation {
                     Image(systemName: "location.fill")
-                }
-            } else {
-                VStack(alignment: .leading) {
-                    Text("\(allWeather.weatherDetail.date.timeOfTheDay)")
-                        .font(.caption)
-                    Text("\(allWeather.weatherDetail.name)")
-                        .font(.title)
                 }
             }
             
