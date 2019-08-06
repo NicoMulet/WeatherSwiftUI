@@ -11,24 +11,32 @@ import MapKit
 
 class CityData: ObservableObject {
     let locationManager: CLLocationManager
-    var cities = ["Paris", "London", "New York"]
+    var cities = [String]()
     
     @Published var allWeathers = [AllWeather]()
     
     init() {
         self.locationManager = CLLocationManager()
+        self.unarchiveCities()
         
         locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func addCity(_ city: String) {
+        cities.append(city)
+        
+        archiveCities()
+        fetchAll()
     }
     
     func fetchAll() {
         if CLLocationManager.locationServicesEnabled(), let location = locationManager.location {
             CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
-                if let currentCity = placemarks?.first?.locality {
+                if let currentCity = placemarks?.first?.locality, !self.cities.contains(currentCity) {
                     self.cities.insert(currentCity, at: 0)
-                    
-                    self.fetch()
                 }
+                
+                self.fetch()
             }
         } else {
             fetch()
@@ -55,6 +63,31 @@ class CityData: ObservableObject {
                     }
                 })
             }
+        }
+    }
+    
+    private func unarchiveCities() {
+        do {
+            if let citiesData = UserDefaults.standard.data(forKey: "cities"),
+                let cities = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(citiesData) as? [String] {
+                self.cities = cities
+            }
+        } catch {
+            #if DEBUG
+            print("Cannot unarchive cities data")
+            #endif
+        }
+    }
+    
+    private func archiveCities() {
+        do {
+            let encodedCities = try NSKeyedArchiver.archivedData(withRootObject: cities, requiringSecureCoding: false)
+            UserDefaults.standard.set(encodedCities, forKey: "cities")
+            UserDefaults.standard.synchronize()
+        } catch {
+            #if DEBUG
+            print("Cannot archive cities data")
+            #endif
         }
     }
 }

@@ -47,8 +47,7 @@ struct NewCityModal: View {
     private func addNewCity() {
         guard !city.isEmpty else { return }
         
-        cityData.cities.append(city)
-        cityData.fetchAll()
+        cityData.addCity(city)
         
         closeModal()
     }

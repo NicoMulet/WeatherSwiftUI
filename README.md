@@ -20,7 +20,6 @@ WeatherSwiftUI tries to be in pure SwiftUI but I had to use some UIKit (UIViewCo
 ## TODO
 
 - [x] Add all views for current and forecast weather
-- [ ] Remove hardcoded cities
 - [x] Possibility to select your own city
 - [ ] macOS version
 - [ ] iPadOS version
