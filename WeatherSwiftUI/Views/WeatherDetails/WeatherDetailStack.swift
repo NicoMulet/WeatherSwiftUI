@@ -27,7 +27,7 @@ struct WeatherDetailStack: View {
             }
             
             VStack(alignment: .leading, spacing: 4.0) {
-                WeatherDetailInformation(title: "SUNRISE", value: Date(timeIntervalSince1970: weatherDetail.sys.sunset).timeOfTheDay)
+                WeatherDetailInformation(title: "SUNSET", value: Date(timeIntervalSince1970: weatherDetail.sys.sunset).timeOfTheDay)
                 Divider()
                 WeatherDetailInformation(title: "HUMIDITY", value: "\(weatherDetail.main.humidity) %")
                 Divider()
