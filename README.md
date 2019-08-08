@@ -17,9 +17,3 @@ WeatherSwiftUI uses the [OpenWeather API](https://openweathermap.org) to fetch w
 
 WeatherSwiftUI tries to be in pure SwiftUI but I had to use some UIKit (UIViewControllerRepresentable) for the PageViewController.
 
-## TODO
-
-- [x] Add all views for current and forecast weather
-- [x] Possibility to select your own city
-- [ ] macOS version
-- [ ] iPadOS version
