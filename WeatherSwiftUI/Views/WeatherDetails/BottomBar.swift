@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct BottomBar: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             Divider()
@@ -17,7 +19,7 @@ struct BottomBar: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    self.presentationMode.value.dismiss()
                 }) {
                     Image(systemName: "list.bullet")
                         .foregroundColor(.primary)
