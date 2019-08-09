@@ -1,7 +1,7 @@
 # WeatherSwiftUI
 
 This application is a SwiftUI implementation of the iOS Weather app.
-It currently runs on iOS but the goal is to run on macOS and iPadOS too.
+It runs on iOS, macOS and iPadOS. The project will evolve with the different beta of Xcode and SwiftUI
 
 <p float="left">
   <image src="https://user-images.githubusercontent.com/22772021/62471530-2335fd00-b79d-11e9-8ee8-f464d5aad186.png" width="275"/>
@@ -13,6 +13,10 @@ It currently runs on iOS but the goal is to run on macOS and iPadOS too.
   <image src="https://user-images.githubusercontent.com/22772021/62767690-87a2d600-ba95-11e9-9619-b6c6d189e5c4.png" width="425"/>
   <image src="https://user-images.githubusercontent.com/22772021/62767685-870a3f80-ba95-11e9-9038-5cffda327f5b.png" width="425"/>
 </p>
+
+## Architecture
+
+The project is currently neither in MVC, since there is no real controller, nor in MVVM. WeatherSwiftUI will soon be updated to fit MVVM pattern.
 
 ## API
 
