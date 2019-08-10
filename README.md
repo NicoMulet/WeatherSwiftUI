@@ -1,7 +1,8 @@
 # WeatherSwiftUI
 
-This application is a SwiftUI implementation of the iOS Weather app.
-It runs on iOS, macOS and iPadOS. The project will evolve with the different beta of Xcode and SwiftUI
+This application is a SwiftUI implementation of the iOS Weather app. 
+All the background images of the iOS Weather app are not present at the moment, this could be a future improvement of this project. 
+The app runs on iOS, macOS and iPadOS. The project will evolve with the different betas of Xcode and SwiftUI.
 
 <p float="left">
   <image src="https://user-images.githubusercontent.com/22772021/62471530-2335fd00-b79d-11e9-8ee8-f464d5aad186.png" width="275"/>
@@ -16,7 +17,7 @@ It runs on iOS, macOS and iPadOS. The project will evolve with the different bet
 
 ## Architecture
 
-The project is currently neither in MVC, since there is no real controller, nor in MVVM. WeatherSwiftUI will soon be updated to fit MVVM pattern.
+The project fits currently the MVVM pattern. As the project follows the different SwiftUI tutorials from Apple, `ViewModels` are called `Datas`.
 
 ## API
 
@@ -25,4 +26,3 @@ WeatherSwiftUI uses the [OpenWeather API](https://openweathermap.org) to fetch w
 ## SwiftUI
 
 WeatherSwiftUI tries to be in pure SwiftUI but I had to use some UIKit (UIViewControllerRepresentable) for the PageViewController.
-
