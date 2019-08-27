@@ -6,6 +6,7 @@
 //  Copyright © 2019 Nicolas Mulet. All rights reserved.
 //
 
+import MapKit
 import SwiftUI
 
 struct CityList: View {
@@ -25,7 +26,7 @@ struct CityList: View {
                                                              currentPage: index)) {
                                 CityCell(temperatureData: self.temperatureData,
                                          allWeather: self.cityData.allWeathers[index],
-                                         isCurrentLocation: index == 0)
+                                         isCurrentLocation: CLLocationManager.locationServicesEnabled() && index == 0)
                         }
                     }
                     

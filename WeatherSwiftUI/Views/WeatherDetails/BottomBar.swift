@@ -19,7 +19,7 @@ struct BottomBar: View {
                 Spacer()
                 
                 Button(action: {
-                    self.presentationMode.value.dismiss()
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Image(systemName: "list.bullet")
                         .foregroundColor(.primary)

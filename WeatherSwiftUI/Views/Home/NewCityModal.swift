@@ -53,7 +53,7 @@ struct NewCityModal: View {
     }
     
     private func closeModal() {
-        presentationMode.value.dismiss()
+        presentationMode.wrappedValue.dismiss()
         city = ""
     }
 }

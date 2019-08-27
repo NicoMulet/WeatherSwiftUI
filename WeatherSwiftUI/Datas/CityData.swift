@@ -16,8 +16,8 @@ class CityData: ObservableObject {
     @Published var allWeathers = [AllWeather]()
     
     init() {
-        self.locationManager = CLLocationManager()
-        self.unarchiveCities()
+        locationManager = CLLocationManager()
+        unarchiveCities()
         
         locationManager.requestWhenInUseAuthorization()
     }
