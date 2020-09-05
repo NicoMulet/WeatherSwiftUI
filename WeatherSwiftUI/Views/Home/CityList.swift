@@ -10,10 +10,12 @@ import MapKit
 import SwiftUI
 
 struct CityList: View {
+    
     @ObservedObject var temperatureData: TemperatureData
     @ObservedObject var cityData: CityData
     
     @State var showNewCityModal = false
+    
     var degrees = ["°C", "°F"]
     
     var body: some View {

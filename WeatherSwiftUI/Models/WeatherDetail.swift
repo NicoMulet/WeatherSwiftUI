@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 struct WeatherDetail: Codable, Identifiable {
+    
     let id: Int
     
     let name: String
@@ -32,6 +33,7 @@ struct WeatherDetail: Codable, Identifiable {
     let weather: [Weather]
     
     struct Main: Codable {
+        
         let temp: Double
         var temperature: Kelvin {
             return Kelvin(kelvin: temp)
@@ -52,9 +54,10 @@ struct WeatherDetail: Codable, Identifiable {
     let main: Main
     
     struct Sys: Codable, Identifiable {
+        
         let id = UUID()
         let type: Int?
-        let message: Float
+        let message: Float?
         let country: String
         let sunrise: TimeInterval
         let sunset: TimeInterval

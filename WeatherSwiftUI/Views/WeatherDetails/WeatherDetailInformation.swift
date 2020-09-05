@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WeatherDetailInformation: View {
+    
     var title: String
     var value: String
     

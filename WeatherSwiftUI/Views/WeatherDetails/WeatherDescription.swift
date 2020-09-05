@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WeatherDescription: View {
+    
     var description: String
     var currentTemp: Int
     var maxTemp: Int

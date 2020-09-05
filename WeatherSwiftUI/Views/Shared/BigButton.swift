@@ -9,15 +9,14 @@
 import SwiftUI
 
 struct BigButton: View {
+    
     let action: () -> Void
     let imageName: String
     let text: String
     let color: Color
     
     var body: some View {
-        Button(action: {
-            self.action()
-        }, label: {
+        Button(action: action, label: {
             HStack(alignment: .center) {
                 Image(systemName: imageName)
                     .foregroundColor(.primary)

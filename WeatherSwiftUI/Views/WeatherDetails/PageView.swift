@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct PageView: View {
+    
     var temperatureData: TemperatureData
     var allWeathers: [AllWeather]
     var viewControllers: [UIHostingController<WeatherCityView>]

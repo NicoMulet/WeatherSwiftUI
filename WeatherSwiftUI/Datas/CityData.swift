@@ -46,7 +46,7 @@ class CityData: ObservableObject {
     private func fetch() {
         allWeathers.removeAll()
         
-        for city in cities {
+        cities.forEach { city in
             let weatherCityData = WeatherCityData(city: city)
             weatherCityData.fetch() {
                 var tmpWeathers = [AllWeather]()

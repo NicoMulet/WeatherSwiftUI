@@ -9,6 +9,7 @@
 import Foundation
 
 struct AllWeather: Identifiable {
+    
     let id = UUID()
     
     let weatherDetail: WeatherDetail

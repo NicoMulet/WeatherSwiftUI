@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WeatherHourlyForecastDetailView: View {
+    
     @ObservedObject var temperatureData: TemperatureData
     var weatherHourlyForecast: WeatherForecastDetail
     
@@ -18,8 +19,8 @@ struct WeatherHourlyForecastDetailView: View {
                 Text("Now")
                     .bold()
                 
-                if weatherHourlyForecast.rain?.probability ?? 0.0 > 0.0 {
-                    Text("\(Int((weatherHourlyForecast.rain?.probability ?? 0.0))) cm")
+                if let rainProbability = weatherHourlyForecast.rain?.probability, rainProbability > 0.0 {
+                    Text("\(Int((rainProbability))) cm")
                         .font(.footnote)
                         .foregroundColor(.blue)
                 } else {
@@ -31,8 +32,8 @@ struct WeatherHourlyForecastDetailView: View {
             } else {
                 Text(weatherHourlyForecast.date.hourOfTheDay)
                 
-                if weatherHourlyForecast.rain?.probability ?? 0.0 > 0.0 {
-                    Text("\(Int((weatherHourlyForecast.rain?.probability ?? 0.0))) cm")
+                if let rainProbability = weatherHourlyForecast.rain?.probability, rainProbability > 0.0 {
+                    Text("\(Int((rainProbability))) cm")
                         .font(.footnote)
                         .foregroundColor(.blue)
                 } else {

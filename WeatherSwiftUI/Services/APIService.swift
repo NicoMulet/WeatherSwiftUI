@@ -54,10 +54,8 @@ struct APIService {
         var components = URLComponents(url: queryURL, resolvingAgainstBaseURL: true)
         components?.queryItems = [URLQueryItem(name: "appid", value: apiKey)]
         
-        if let params = params {
-            for value in params {
-                components?.queryItems?.append(URLQueryItem(name: value.key, value: value.value))
-            }
+        params?.forEach { value in
+            components?.queryItems?.append(URLQueryItem(name: value.key, value: value.value))
         }
         
         if let url = components?.url {

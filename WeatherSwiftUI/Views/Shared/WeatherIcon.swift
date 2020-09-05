@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct WeatherIcon: View {
+    
     @ObservedObject var imageData: ImageData
     
     var body: some View {
         Group {
-            if imageData.image != nil {
-                Image(uiImage: imageData.image!)
+            if let image = imageData.image {
+                Image(uiImage: image)
                     .resizable()
                     .frame(width: 35.0, height: 35.0)
             } else {

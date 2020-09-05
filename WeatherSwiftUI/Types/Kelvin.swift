@@ -9,17 +9,18 @@
 import Foundation
 
 public struct Kelvin: Codable {
+    
     private var kelvin: Double
     
     init(kelvin: Double) {
         self.kelvin = kelvin
     }
     
-    func toCelsius() -> Int {
+    var celsiusValue: Int {
         return Int(kelvin - 273.15)
     }
     
-    func toFahrenheit() -> Int {
+    var fahrenheitValue: Int {
         return Int((kelvin * 9 / 5) - 459.67)
     }
 }

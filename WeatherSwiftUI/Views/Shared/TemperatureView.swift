@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct TemperatureView: View {
+    
     var tempMin: Int
     var tempMax: Int
     

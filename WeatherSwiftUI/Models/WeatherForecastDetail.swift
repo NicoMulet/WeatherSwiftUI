@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 struct WeatherForecastDetail: Codable, Identifiable {
+    
     let id = UUID()
     
     let dt: TimeInterval

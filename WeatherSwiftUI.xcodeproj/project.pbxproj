@@ -503,10 +503,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WeatherSwiftUI/WeatherSwiftUI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "WeatherSwiftUI/Preview\\ Content";
-				DEVELOPMENT_TEAM = QVJ37G4VEG;
+				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WeatherSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,10 +527,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WeatherSwiftUI/WeatherSwiftUI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "WeatherSwiftUI/Preview\\ Content";
-				DEVELOPMENT_TEAM = QVJ37G4VEG;
+				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WeatherSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

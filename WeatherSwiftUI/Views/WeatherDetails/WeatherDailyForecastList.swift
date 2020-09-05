@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WeatherDailyForecastList: View {
+    
     var temperatureData: TemperatureData
     var weatherForecastList: [WeatherForecastDetail]
     

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LoadingView: UIViewRepresentable {
+    
     typealias UIViewType = UIActivityIndicatorView
         
     func makeUIView(context: UIViewRepresentableContext<LoadingView>) -> UIActivityIndicatorView {

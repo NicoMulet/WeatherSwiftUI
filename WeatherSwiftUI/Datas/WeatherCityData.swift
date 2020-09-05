@@ -10,11 +10,12 @@ import Combine
 import SwiftUI
 
 class WeatherCityData: ObservableObject {
-    let city: String
     
     @Published var weatherDetail: WeatherDetail? = nil
     @Published var weatherDailyForecast: WeatherForecast? = nil
     @Published var weatherHourlyForecast: WeatherForecast? = nil
+    
+    let city: String
     
     init(city: String) {
         self.city = city

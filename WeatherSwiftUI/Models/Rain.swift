@@ -9,6 +9,7 @@
 import Foundation
 
 class Rain: Codable {
+    
     let probability: Float
     
     enum CodingKeys: String, CodingKey {

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @ObservedObject var cityData: CityData
     
     var body: some View {

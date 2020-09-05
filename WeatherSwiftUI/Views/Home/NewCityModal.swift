@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct NewCityModal: View {
+    
     @Environment(\.presentationMode) var presentationMode
     var cityData: CityData
     
@@ -24,9 +25,7 @@ struct NewCityModal: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 if !city.isEmpty {
-                    Button(action: {
-                        self.closeModal()
-                    }) {
+                    Button(action: closeModal) {
                         Text("Cancel")
                             .foregroundColor(.primary)
                     }.animation(.default)

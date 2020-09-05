@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WeatherDetailStack: View {
+    
     var weatherDetail: WeatherDetail
     
     var body: some View {
@@ -17,12 +18,12 @@ struct WeatherDetailStack: View {
                 WeatherDetailInformation(title: "SUNRISE", value: Date(timeIntervalSince1970: weatherDetail.sys.sunrise).timeOfTheDay)
                 Divider()
                 
-                if weatherDetail.wind.direction != nil {
-                    WeatherDetailInformation(title: "WIND", value: "\(weatherDetail.wind.direction!) \(Int(weatherDetail.wind.speed)) km/hr")
+                if let windDirection = weatherDetail.wind.direction {
+                    WeatherDetailInformation(title: "WIND", value: "\(windDirection) \(Int(weatherDetail.wind.speed)) km/hr")
                 }
                 Divider()
-                if weatherDetail.visibility != nil {
-                    WeatherDetailInformation(title: "VISIBILITY", value: "\(weatherDetail.visibility! / 1000) km")
+                if let visibility = weatherDetail.visibility {
+                    WeatherDetailInformation(title: "VISIBILITY", value: "\(visibility / 1000) km")
                 }
             }
             

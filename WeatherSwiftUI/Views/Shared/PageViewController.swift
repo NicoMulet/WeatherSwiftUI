@@ -39,26 +39,16 @@ struct PageViewController: UIViewControllerRepresentable {
         
         func pageViewController(_ pageViewController: UIPageViewController,
                                 viewControllerBefore viewController: UIViewController) -> UIViewController? {
-            guard let index = parent.controllers.firstIndex(of: viewController) else {
-                return nil
-            }
-            
-            if index == 0 {
-                return nil
-            }
+            guard let index = parent.controllers.firstIndex(of: viewController) else { return nil }
+            guard index != 0 else { return nil }
             
             return parent.controllers[index - 1]
         }
         
         func pageViewController(_ pageViewController: UIPageViewController,
                                 viewControllerAfter viewController: UIViewController) -> UIViewController? {
-            guard let index = parent.controllers.firstIndex(of: viewController) else {
-                return nil
-            }
-            
-            if index + 1 == parent.controllers.count {
-                return nil
-            }
+            guard let index = parent.controllers.firstIndex(of: viewController) else { return nil }
+            guard index + 1 != parent.controllers.count else { return nil }
             
             return parent.controllers[index + 1]
         }

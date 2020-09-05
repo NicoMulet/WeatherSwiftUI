@@ -9,45 +9,43 @@
 import Foundation
 
 struct Wind: Codable {
+    
     let speed: Float
     let deg: Float?
     
     enum Direction: String {
-        case North = "N"
-        case NorthEast = "NE"
-        case East = "E"
-        case SouthEast = "SE"
-        case South = "S"
-        case SouthWest = "SW"
-        case West = "W"
-        case NorthWest = "NW"
+        case north = "N"
+        case northEast = "NE"
+        case east = "E"
+        case southEast = "SE"
+        case south = "S"
+        case southWest = "SW"
+        case west = "W"
+        case northWest = "NW"
         
         init(deg: Float) {
             if deg < 23 || deg > 337 {
-                self = .North
+                self = .north
             } else if deg < 68 {
-                self = .NorthEast
+                self = .northEast
             } else if deg < 113 {
-                self = .East
+                self = .east
             } else if deg < 158 {
-                self = .SouthEast
+                self = .southEast
             } else if deg < 203 {
-                self = .South
+                self = .south
             } else if deg < 248 {
-                self = .SouthWest
+                self = .southWest
             } else if deg < 293 {
-                self = .West
+                self = .west
             } else {
-                self = .NorthWest
+                self = .northWest
             }
         }
     }
     
     var direction: String? {
-        if let deg = deg {
-            return Direction(deg: deg).rawValue
-        }
-        
-        return nil
+        guard let deg = deg else { return nil }
+        return Direction(deg: deg).rawValue
     }
 }
